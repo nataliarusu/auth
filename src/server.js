@@ -3,7 +3,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const postsRoutes = require("../routes/home");
+const postsRoutes = require("../routes/posts");
 const addPostRoutes = require("../routes/addpost");
 const app = express(); //express app, has property listen which is a function that will creates a server
 const adminRoutes = require("../routes/admin");
@@ -21,16 +21,11 @@ app.use(postsRoutes);
 
 //last middleware, if not previous matched this will be executed
 app.use((req, res, next) => {
-  // '/' this is default, so we shouldn't add the route, this means all paths after /
-
-  //res.status(404).sendFile(path.join(__dirname, "..", "views", "404.html"));
-  res
-    .status(404)
-    .render("404", {
-      pageTitle: "Page not found",
-      content: "Sorry, page not found",
-    });
-  //we don't need path because app.set() we applyed folder views!, we don't need file extention we did it in app.set("view engine", "ejs");
+  res.status(404).render("404", {
+    //app.set('views')
+    pageTitle: "Page not found",
+    content: "Sorry, page not found",
+  });
 });
 
 module.exports = app;
