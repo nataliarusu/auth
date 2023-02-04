@@ -17,3 +17,9 @@ res.status(404).render("404", { pageTitle: "Page not found" });
 
 //we don't need path because app.set() we applyed folder views!, we don't need file extention we did it in app.set("view engine", "ejs");
 });
+
+<%- include('path') %> render what inside as html
+
+<%= post.title %> render inside variable's value as string
+
+<% %> render what inside as js

@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 const postsRoutes = require("../routes/posts");
 const addPostRoutes = require("../routes/addpost");
+const loginRoutes = require("../routes/login");
 const app = express(); //express app, has property listen which is a function that will creates a server
 const adminRoutes = require("../routes/admin");
 
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, "..", "public"))); //express.static(
 app.use(addPostRoutes);
 app.use(adminRoutes);
 app.use(postsRoutes);
+app.use(loginRoutes);
 
 //last middleware, if not previous matched this will be executed
 app.use((req, res, next) => {
