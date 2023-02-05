@@ -1,0 +1,25 @@
+<%- include('../includes/header.ejs') %>
+<title><%= pageTitle %></title>
+</head>
+<body>
+<%- include('../includes/navigation.ejs') %>  
+<main>
+    <% if(posts.length>0) { %>
+    <div class="grid">
+        <% for(const post of posts){ %>  
+            <div class="card post-item">
+                <header class="card-header">
+                    <h2 class="post_title"><%= post.title %></h2>
+                </header>
+                <div class="post_content"><%= post.content %></div>
+            </div>
+            <% } %>
+    </div>
+    <% } else { %>
+        <h2>No Posts Found!</h2>
+    <% } %>
+        
+</main>
+
+</body>
+</html>
