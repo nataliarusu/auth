@@ -1,6 +1,7 @@
-npm install ejs
-<br>
-//templating engine ejs<br>
+## templating engine ejs
+
+    npm install ejs
+
 The app.set method in Express is used to set the value of a configuration setting for an Express application.
 in server.js
 
@@ -23,3 +24,9 @@ res.status(404).render("404", { pageTitle: "Page not found" });
 <%= post.title %> render inside variable's value as string
 
 <% %> render what inside as js
+
+## Session Middleware
+
+express session package
+
+    npm install --save express-session
